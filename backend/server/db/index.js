@@ -2,7 +2,7 @@ const mysql = require('mysql');
 
 const conn = mysql.createPool({
     connectionLimit: 10,
-    password: 'Thientai1997',
+    password: '',
     user: 'root',
     database: 'laptopphongvu',
     host: 'localhost',
