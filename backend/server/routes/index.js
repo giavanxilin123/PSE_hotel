@@ -13,57 +13,51 @@ const bcrypt = require('bcrypt')
 //     }
 // })
 
-// router.get('/:id', async(req, res, next) => {
-//     try {
-//         let results = await db.one(req.params.id);
-//         res.json(results);
-//     }catch(e){
-//         console.log(e);
-//         res.sendStatus(500)
-//     }
-// })
-
-// router.get('/users', async(req, res, next) => {
-//     try {
-//         let results = await db.users();
-//         res.json(results);
-//     }catch(e){
-//         console.log(e);
-//         res.sendStatus(500)
-//     }
-// })
-
-
-
-router.post('/register', (req, res, next) => {
-    // const body = req.body;
-
-    // if(!(body.username && body.password)){
-    //     return res.status(400).send({error: "Data not formatted properly"})
-    // }
-
-    // const user = {
-    //     username: "van",
-    //     email : "giavanxilin",
-    //     password: "huhu"
-    // }
-    const username =  "giavan";
-    const email =  "giavanxilin@gmail.com";
-    const password = "12345678";
-
-    db.query(
-        "INSERT INTO users (username, email, password) VALUES (?, ?, ?)",
-        [username, email, password],
-        (err, result) =>{
-            console.log(err);
-        }
-    )
-    // const salt =  bcrypt.genSalt(10)
-    // user.password =  await bcrypt.hash(user.password, salt);
-    // user.save().then((doc) => res.status(200).send(doc));
-   
-     
+router.post('/register', async (req, res, next) => {
+    try{
+        const salt = await bcrypt.genSalt();
+        const hashedPassword = await bcrypt.hash(req.body.password, salt)
+        const username = req.body.username;
+        const email = req.body.email;
+        db.query(
+            "INSERT INTO users (username, email, password) VALUES (?, ?, ?)",
+            [username, email, hashedPassword],
+            (err, result) =>{
+                res.json(result)
+            }
+        )
+    }catch{
+        res.status(500).send();
+    }
 })
+
+router.post('/login', (req, res, next) => {
+    const username = req.body.username;
+    const password = req.body.password;
+    db.query(
+        `SELECT password FROM users WHERE username = '${username}'`,
+        (err, result) => {
+            if(result.length > 0){
+                bcrypt.compare(
+                    password,
+                    result[0].password,
+                    (err, result) => {
+                        if(result)  {
+                            res.status(200).send({message : "Đăng nhập "})
+                        }
+                        else{
+                            res.status(403).send({message : "Mật khẩu không chính xác"});
+
+                        }
+                    }
+                )                     
+            }else{
+                res.status(404).send({message : "Tài khoản không tồn tại! "})
+            }
+        }
+     )
+})
+
 
 
 

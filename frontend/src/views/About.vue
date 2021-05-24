@@ -23,7 +23,7 @@
             <el-button class="modal-register" type="primary" @click="submit">Tạo tài khoản</el-button>
           </el-form>
 
-          
+        
           <el-form :model="formLogin">
             <h2 >Đăng nhập</h2>
             <el-form-item 
@@ -38,7 +38,7 @@
               <el-input type="password" v-model="formLogin.password" autocomplete="off"></el-input>
             </el-form-item>
             
-            <el-button class="modal-login" type="primary" @click="submit">Tạo tài khoản</el-button>
+            <el-button class="modal-login" type="primary" @click="login">Đăng nhập</el-button>
           </el-form>
     </div>
 </template>
@@ -67,14 +67,32 @@ export default {
 
   },
   methods: {
-    async submit(){
-        try {
-        await axios.post('http://localhost:3000/api/register', this.form)
-        .then(res => console.log(res))
-        } catch (err) {
-          console.log(err)
-        }
+      submit(){
+        axios.post('http://localhost:3000/api/register', this.formRegister)
+        .then(res => {this.alertSuccess(res)})
+        .catch(err => {this.alertErr(err)})
       },
+    
+      login(){
+        axios.post('http://localhost:3000/api/login', this.formLogin)
+        .then(res => this.alertSuccess(res))
+        .catch(err => this.alertErr(err.response.data))
+      },
+      alertErr(err) {
+      this.$message({
+        showClose: true,
+        message:  err.message || "Đã có lỗi xảy ra!",
+        type: "error"
+      });
+      },
+      alertSuccess(res) {
+        console.log(res)
+        this.$message({
+          showClose: true,
+          message: res.data.message +  "thành Công!",
+          type: "success"
+        });
+      }
   }
 }
 </script>
