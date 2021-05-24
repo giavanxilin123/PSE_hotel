@@ -2,46 +2,45 @@ const mysql = require('mysql');
 
 const conn = mysql.createPool({
     connectionLimit: 10,
-    password: '',
+    password: 'Thientai1997',
     user: 'root',
-    database: 'laptopphongvu',
+    database: 'PSE',
     host: 'localhost',
     port: '3306'
 });
 
-let hihi = {};
+// let hihi = {};
+// hihi.all = () => {
+//     return new Promise((resolve, reject) =>{
+//         conn.query(`SELECT * from products`, (err, res) => {
+//             if(err){
+//                 return reject(err)
+//             }
+//             return resolve(res);
+//         })
+//     })
+// }
 
-hihi.all = () => {
-    return new Promise((resolve, reject) =>{
-        conn.query(`SELECT * from products`, (err, res) => {
-            if(err){
-                return reject(err)
-            }
-            return resolve(res);
-        })
-    })
-}
+// hihi.one = (id) => {
+//     return new Promise((resolve, reject) =>{
+//         conn.query(`SELECT * from products WHERE product_id = ?`,[id], (err, res) => {
+//             if(err){
+//                 return reject(err)
+//             }
+//             return resolve(res[0]);
+//         })
+//     })
+// }
 
-hihi.one = (id) => {
-    return new Promise((resolve, reject) =>{
-        conn.query(`SELECT * from products WHERE product_id = ?`,[id], (err, res) => {
-            if(err){
-                return reject(err)
-            }
-            return resolve(res[0]);
-        })
-    })
-}
+// hihi.users = () => {
+//     return new Promise((resolve, reject) =>{
+//         conn.query(`SELECT * from users`, (err, res) => {
+//             if(err){
+//                 return reject(err)
+//             }
+//             return resolve(res);
+//         })
+//     })
+// }
 
-hihi.users = () => {
-    return new Promise((resolve, reject) =>{
-        conn.query(`SELECT * from users`, (err, res) => {
-            if(err){
-                return reject(err)
-            }
-            return resolve(res);
-        })
-    })
-}
-
-module.exports = hihi;
+module.exports = conn;

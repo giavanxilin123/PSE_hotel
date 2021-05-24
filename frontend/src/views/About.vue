@@ -1,9 +1,46 @@
 <template>
-  <div class="about">
     <div>
-      {{task}}
+          <el-form :model="formRegister">
+            <h2 >Tạo tài khoản</h2>
+            <el-form-item 
+            label="Username" 
+            prop="username"
+            :rules="[{required: true, message:'Please input your username ', trigger:'blur'}]">
+              <el-input v-model="formRegister.username" autocomplete="off"></el-input>
+            </el-form-item>
+             <el-form-item label="Mật khẩu" 
+             prop="password"
+             :rules="[{required: true, message:'Please input your password ', trigger:'blur'}]">
+              <el-input type="password" v-model="formRegister.password" autocomplete="off"></el-input>
+            </el-form-item>
+             <el-form-item label="Email" 
+             prop="email"
+             :rules="[{required: true, message:'Please input your email', trigger:'blur'},
+                      {type: 'email', message: 'Please input correct email', trigger: ['blur', 'change'] }]">
+              <el-input  v-model="formRegister.email" autocomplete="off"></el-input>
+            </el-form-item>
+            
+            <el-button class="modal-register" type="primary" @click="submit">Tạo tài khoản</el-button>
+          </el-form>
+
+          
+          <el-form :model="formLogin">
+            <h2 >Đăng nhập</h2>
+            <el-form-item 
+            label="Username" 
+            prop="username"
+            :rules="[{required: true, message:'Please input your username ', trigger:'blur'}]">
+              <el-input v-model="formLogin.username" autocomplete="off"></el-input>
+            </el-form-item>
+             <el-form-item label="Mật khẩu" 
+             prop="password"
+             :rules="[{required: true, message:'Please input your password ', trigger:'blur'}]">
+              <el-input type="password" v-model="formLogin.password" autocomplete="off"></el-input>
+            </el-form-item>
+            
+            <el-button class="modal-login" type="primary" @click="submit">Tạo tài khoản</el-button>
+          </el-form>
     </div>
-  </div>
 </template>
 
 <script>
@@ -11,25 +48,37 @@ import axios from 'axios';
 export default {
   data(){
     return {
-      task : []
+      formRegister: {
+          email: '',
+          username: '',
+          password: ''
+        },
+        formLogin: {
+          username: '',
+          password: ''
+        },
     }
   },
-  created(){
-    axios.get('http://localhost:3000/api/products')
-    .then(res => this.task = res.data)
-  },
+  // created(){
+  //   axios.get('http://localhost:3000/api/register')
+  //   .then(res => this.task = res.data)
+  // },
   computed: {
 
   },
   methods: {
-
+    async submit(){
+        try {
+        await axios.post('http://localhost:3000/api/register', this.form)
+        .then(res => console.log(res))
+        } catch (err) {
+          console.log(err)
+        }
+      },
   }
 }
 </script>
 
 <style >
-  .about .el-button {
-    cursor: pointer !important;
-    
-  }
+
 </style>
