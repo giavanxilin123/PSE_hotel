@@ -9,17 +9,7 @@ const conn = mysql.createPool({
     port: '3306'
 });
 
-// let hihi = {};
-// hihi.all = () => {
-//     return new Promise((resolve, reject) =>{
-//         conn.query(`SELECT * from products`, (err, res) => {
-//             if(err){
-//                 return reject(err)
-//             }
-//             return resolve(res);
-//         })
-//     })
-// }
+
 
 // hihi.one = (id) => {
 //     return new Promise((resolve, reject) =>{

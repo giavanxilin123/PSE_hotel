@@ -21,7 +21,7 @@
              :rules="[{required: true, message:'Please input your password ', trigger:'blur'}]">
               <el-input type="password"  v-model="formLogin.password" @keyup.enter.native="login" autocomplete="off"></el-input>
             </el-form-item>
-            <el-button class="modal-form" type="primary"   @click="login" >LOG IN</el-button>
+            <el-button class="modal-form" type="primary"   @click="login" >LOG IN {{user}}</el-button>
         </el-form>
         </div>
   
@@ -73,9 +73,6 @@ export default {
         formLogin: {
           username: '',
           password: ''
-        },
-        user:{
-          username: ''
         }
     }
   },
@@ -84,32 +81,34 @@ export default {
   //   .then(res => this.task = res.data)
   // },
   computed: {
-   
+    
   },
   methods: {
-      handle_interceptor(){
-        axios.interceptors.request.use((config) => {
-        config.headers.common["interceptorheader"] = "Interceptor Header";
-        config.payload = "hihi";
-        return config;
-        }, (error) => {
-            return Promise.reject(error);
-         });
-      },
       submit(){
         axios.post('http://localhost:3000/api/register', this.formRegister)
         .then(res => {this.alertSuccess(res)})
         .catch(err => {this.alertErr(err)})
       },
     
+      // async login(){
+      //   await axios.post('http://localhost:3000/api/login', this.formLogin)
+      //   .then(res => {
+      //     console.log(res)
+      //     this.alertSuccess()
+      //     this.$router.push("/home");
+      //   })
+      //   .catch(err => this.alertErr(err.response.data))
+      // },
+
       async login(){
-        await axios.post('http://localhost:3000/api/login', this.formLogin)
-        .then(res => {
-          console.log(res)
-          this.alertSuccess()
+        try{
+          await this.$store.dispatch("logIn", this.formLogin);
+          this.alertSuccess();
           this.$router.push("/home");
-        })
-        .catch(err => this.alertErr(err.response.data))
+        }catch(err){
+          this.alertErr(err)
+        }
+        console.log(this.user)
       },
       alertErr(err) {
       this.$message({
@@ -168,7 +167,6 @@ export default {
    .modal-form:hover{
     width: 100%;
     background-color: #e2ae7c;
-    
   }
   
 </style>
