@@ -34,20 +34,21 @@ router.post('/register', async (req, res, next) => {
 router.post('/login', (req, res, next) => {
     const username = req.body.username;
     const password = req.body.password;
+    
     db.query(
-        `SELECT password FROM users WHERE username = '${username}'`,
-        (err, result) => {
-            if(result.length > 0){
+        `SELECT * FROM users WHERE username = '${username}'`,
+        (err, body) => {
+            if(body.length > 0){
                 bcrypt.compare(
                     password,
-                    result[0].password,
+                    body[0].password,
                     (err, result) => {
-                        if(result)  {
-                            res.status(200).send({message : "Đăng nhập "})
+                        if(result){
+                            res.status(200).send(body[0])
+                            
                         }
                         else{
                             res.status(403).send({message : "Mật khẩu không chính xác"});
-
                         }
                     }
                 )                     
