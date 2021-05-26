@@ -8,17 +8,56 @@
         Hello. Our hotel has been present for over 20 years. We make the best
         for all our customers.
       </div>
-
-      <div class="about_us_background_1">
-        <div class="shade-background_about_us">TOP RESTAURANT</div>
+      <div class="banner">
+        <div class="banner_1">
+          <div class="shade-background_banner">TOP RESTAURANT</div>
+        </div>
+        <div class="banner_2">
+          <div class="shade-background_banner">SPA & WELLNESS</div>
+        </div>
+        <div class="banner_3">
+          <div class="shade-background_banner">BEST SUITES</div>
+        </div>
       </div>
-      <div class="about_us_background_2">
-        <div class="shade-background_about_us">SPA & WELLNESS</div>
+    </div>
+    <div class="test">
+      <div class="test2">
+        <div class="test3">Doing the right thing, at the right time.</div>
       </div>
-      <div class="about_us_background_3">
-        <div class="shade-background_about_us">BEST SUITES</div>
+    </div>
+    <div class="box-sizing">
+      <div class="banner">
+        <div class="img-container">
+          <img
+            src="http://www.nicdarkthemes.com/themes/hotel/wp/demo/hotel/wp-content/uploads/sites/2/2017/07/icon-13.png"
+          />
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+          egestas magna at porttitor vehicula nullam augue ipsum dolor.
+        </div>
+        <div class="img-container">
+          <img
+            src="http://www.nicdarkthemes.com/themes/hotel/wp/demo/hotel/wp-content/uploads/sites/2/2017/07/icon-11.png"
+          />
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+          egestas magna at porttitor vehicula nullam augue ipsum dolor.
+        </div>
       </div>
-      
+      <div class="banner">
+        <div class="img-container">
+          <img
+            src="http://www.nicdarkthemes.com/themes/hotel/wp/demo/hotel/wp-content/uploads/sites/2/2017/07/icon-12-1.png"
+          />
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+          egestas magna at porttitor vehicula nullam augue ipsum dolor.
+        </div>
+        <div class="img-container">
+          <img
+            src="http://www.nicdarkthemes.com/themes/hotel/wp/demo/hotel/wp-content/uploads/sites/2/2017/07/icon-14-1.png"
+          />
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+          egestas magna at porttitor vehicula nullam augue ipsum dolor.
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -36,32 +75,32 @@
   background-size: cover;
 }
 
-.about_us_background_1 {
+.banner_1 {
   background: url(http://www.nicdarkthemes.com/themes/hotel/wp/demo/hotel/wp-content/uploads/sites/2/2017/07/img-8.jpg);
   height: 305px;
   width: 305px;
   background-position: center bottom;
   background-size: cover;
-  float: left;
-  margin: 30px;
+  /* float: left;
+  margin: 30px; */
 }
-.about_us_background_2 {
+.banner_2 {
   background: url(http://www.nicdarkthemes.com/themes/hotel/wp/demo/hotel/wp-content/uploads/sites/2/2017/07/img-9.jpg);
   height: 305px;
   width: 305px;
   background-position: center bottom;
   background-size: cover;
-  float: left;
-  margin: 30px;
+  /* float: left;
+  margin: 30px; */
 }
-.about_us_background_3 {
+.banner_3 {
   background: url(http://www.nicdarkthemes.com/themes/hotel/wp/demo/hotel/wp-content/uploads/2017/07/img-11.jpg);
   height: 305px;
   width: 305px;
   background-position: center bottom;
   background-size: cover;
-  float: left;
-  margin: 30px;
+  /* float: left;
+  margin: 30px; */
 }
 .shade-background {
   background-color: rgba(67, 74, 84, 0.3);
@@ -70,7 +109,7 @@
   color: white;
   line-height: 305px;
 }
-.shade-background_about_us {
+.shade-background_banner {
   background-color: rgba(67, 74, 84, 0.3);
   height: 305px;
   font-size: 20px;
@@ -78,11 +117,43 @@
   line-height: 500px;
 }
 .about_us_sentence {
-  text-align: center;
+  /* text-align: center; */
   font-size: 40px;
-  width: 50%;
+  /* width: 50%; */
   /* padding-right: 200px;
       padding-left: 200px; */
 }
-
+.banner {
+  padding: 2.5% 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.test {
+}
+.test2 {
+  background: url(http://www.nicdarkthemes.com/themes/hotel/wp/demo/hotel/wp-content/uploads/sites/2/2017/06/parallax-8.jpg);
+}
+.test3 {
+  background-color: rgba(67, 74, 84, 0.3);
+  /* height: 305px; */
+  font-size: 50px;
+  color: white;
+  line-height: 500px;
+}
+.grid2x2 {
+  min-height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.img-container {
+  display: flex; /* flexbox */
+  /* flex-wrap: wrap; */
+  justify-content: center; 
+  align-items: center;
+  width: 400px;
+  text-align: left;
+}
 </style>
