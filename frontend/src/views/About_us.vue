@@ -6,7 +6,9 @@
     <div class="box-sizing">
       <div class="about_us_sentence">
         Hello. Our hotel has been present for over 20 years. We make the best
-        for all our customers.
+        for all our customers. Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Aenean egestas magna at porttitor vehicula nullam augue
+        ipsum dolor.
       </div>
       <div class="banner">
         <div class="banner_1">
@@ -66,7 +68,7 @@
 <style scoped>
 .box-sizing {
   box-sizing: border-box;
-  padding: 30px 300px;
+  padding: 30px 200px;
 }
 .account-background {
   background: url(http://www.nicdarkthemes.com/themes/hotel/wp/demo/wp-content/uploads/2017/06/parallax-10.jpg);
@@ -117,11 +119,8 @@
   line-height: 500px;
 }
 .about_us_sentence {
-  /* text-align: center; */
+  font-family: 'Times New Roman', Times, serif;
   font-size: 40px;
-  /* width: 50%; */
-  /* padding-right: 200px;
-      padding-left: 200px; */
 }
 .banner {
   padding: 2.5% 0;
@@ -142,18 +141,13 @@
   color: white;
   line-height: 500px;
 }
-.grid2x2 {
-  min-height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-}
+
 .img-container {
-  display: flex; /* flexbox */
-  /* flex-wrap: wrap; */
-  justify-content: center; 
+  display: flex;
+  justify-content: center;
   align-items: center;
   width: 400px;
   text-align: left;
+  
 }
 </style>
