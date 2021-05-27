@@ -26,6 +26,17 @@
       <div class="test2">
         <div class="box-sizing">
           <div class="test3">Doing the right thing, at the right time.</div>
+          <div class="count-number">
+            <number ref="numberExample" :to="15" />
+            <number ref="numberExample" :to="100" />
+            <number ref="numberExample" :to="47" />
+            <number ref="numberExample" :to="10" />
+          </div>
+          
+            <div class="hoge">
+              <pre>    SUITES         ROOMS     EMPLOYEES   SERVICES</pre>
+              </div>
+          
         </div>
       </div>
     </div>
@@ -160,6 +171,16 @@ export default {
   flex-wrap: wrap;
   justify-content: space-around;
 }
+.count-number {
+  padding:  0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  font-size: 100px;
+  font-family: "Times New Roman", Times, serif;
+  color: white;
+}
 .test {
 }
 .test2 {
@@ -204,5 +225,10 @@ export default {
 }
 .margin {
   margin: 20px 300px;
+}
+.hoge{
+  font-size: 40px;
+  font-family: "Times New Roman", Times, serif;
+  color: white;
 }
 </style>
