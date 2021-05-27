@@ -129,8 +129,7 @@
   flex-wrap: wrap;
   justify-content: space-around;
 }
-.test {
-}
+
 .test2 {
   background: url(http://www.nicdarkthemes.com/themes/hotel/wp/demo/hotel/wp-content/uploads/sites/2/2017/06/parallax-8.jpg);
 }

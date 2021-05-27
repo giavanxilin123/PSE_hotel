@@ -1,29 +1,29 @@
 <template>
   <div>
-    <div class="account-background">
-      <div class="shade-background">OUR NEWS</div>
+      <div class="account-background">
+        <div class="shade-background">OUR NEWS</div>
+      </div>
+      <div class="box-sizing1">
+        <div class="news_background_1">
+          <div class="shade-background_news1">New Website</div>
+        </div>
+        <div class="news_background_2">
+          <div class="shade-background_news2">Follow our Hotel</div>
+        </div>
+        <div class="news_background_3">
+          <div class="shade-background_news3">Relax zone</div>
+        </div>
+        <div class="news_background_4">
+          <div class="shade-background_news4"> Check New Events</div>
+        </div>
+        <div class="news_background_5">
+          <div class="shade-background_news5"> Around us</div>
+        </div>
+        <div class="news_background_6">
+          <div class="shade-background_news6"> Daily Walk</div>
+        </div>
+      
     </div>
-    <div class="box-sizing1">
-      <div class="news_background_1">
-        <div class="shade-background_news1">New Website</div>
-      </div>
-      <div class="news_background_2">
-        <div class="shade-background_news2">Follow our Hotel</div>
-      </div>
-      <div class="news_background_3">
-        <div class="shade-background_news3">Relax zone</div>
-      </div>
-      <div class="news_background_4">
-        <div class="shade-background_news4"> Check New Events</div>
-      </div>
-      <div class="news_background_5">
-        <div class="shade-background_news5"> Around us</div>
-      </div>
-      <div class="news_background_6">
-        <div class="shade-background_news6"> Daily Walk</div>
-      </div>
-    
-   </div>
    </div>
    
 </template>
