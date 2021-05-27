@@ -24,6 +24,7 @@
                   value-format="yyyy-MM-dd"
                   placeholder="CHECK - OUT">
                 </el-date-picker>
+                 <!-- <el-input-number v-model="num" controls-position="right" @change="handleChange" :min="1" :max="10"></el-input-number> -->
                 <el-button @click="submitDate">CHECK AVAILABILITY</el-button>
               </div>
           </div>
@@ -40,19 +41,27 @@ export default {
   name: 'Home',
   data(){
     return {
-      checkIn: '',
-      checkOut: ''
+          num: 1,
+          checkIn: '',
+          checkOut: '', 
     }
   },
   methods: {
     submitDate(){
-      console.log(this.checkIn == '2021/05/27');
+      console.log(this.checkIn);
+      this.$router.push("/search")
     }
   }
 }
 </script>
 
 <style scoped>
+  .block .el-button {
+    white-space: initial;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    font-size: 12px
+  }
   .carousel{
     background: url(../assets/homepage-carousel.jpeg);
     height: 765px;
@@ -102,10 +111,16 @@ export default {
     padding: 51px 30px;
     width: 192px;
   }
+  .el-input-number{
+    width: 192px;
+  }
   
 </style>
 
 <style>
+  .block {
+    display: flex;
+  }
   .home-booking .block .el-date-editor input{
     height: 138px !important;
     border-radius: 0;
@@ -116,5 +131,8 @@ export default {
   }
   .home-booking .el-input--prefix .el-input__inner{
     padding-left: 60px;
+  }
+  .home-booking .block .el-input__inner{
+    font-size: 14px;
   }
 </style>
