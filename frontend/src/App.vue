@@ -8,7 +8,7 @@
          <router-link to="/">Home</router-link> 
          <router-link to="/room">Rooms</router-link>
          <router-link to="/about-us">About us</router-link>
-          <router-link to="/page">Page</router-link> 
+         <router-link to="/page">Page</router-link> 
          <router-link to="/news">News</router-link>
          <router-link to="/contact">Contact</router-link>
          <router-link style="color: #c19b76; border-radius: 30%; border: 1px solid #c19b76; padding: 5px 30px; margin-left: 20px" v-if="!user.nickname" to="/authenticate">Login</router-link>
@@ -17,6 +17,9 @@
       </div> 
     </div>
     <router-view/>
+    <div class ="footer">
+      <!-- footer  -->
+    </div>
   </div>
 </template>
 

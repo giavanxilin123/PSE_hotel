@@ -1,17 +1,24 @@
 <template>
   <div class="home">
-    <Navbar/>
+    <div class="carousel"></div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Navbar from '@/components/Navbar.vue'
+
 
 export default {
   name: 'Home',
-  components: {
-   Navbar
-  }
+  
 }
 </script>
+
+<style scoped>
+  .carousel{
+    background: url(../assets/homepage-carousel.jpeg);
+    height: 785px;
+    background-size: cover;
+    background-position: center;
+  }
+</style>

@@ -21,7 +21,7 @@
              :rules="[{required: true, message:'Please input your password ', trigger:'blur'}]">
               <el-input type="password"  v-model="formLogin.password" @keyup.enter.native="login" autocomplete="off"></el-input>
             </el-form-item>
-            <el-button class="modal-form" type="primary"   @click="login" >LOG IN {{user}}</el-button>
+            <el-button class="modal-form" type="primary"   @click="login" >LOG IN </el-button>
         </el-form>
         </div>
   
