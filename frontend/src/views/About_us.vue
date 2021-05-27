@@ -171,6 +171,7 @@ export default {
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
 .count-number {
   padding:  0;
   display: flex;
@@ -181,8 +182,7 @@ export default {
   font-family: "Times New Roman", Times, serif;
   color: white;
 }
-.test {
-}
+
 .test2 {
   background: url(http://www.nicdarkthemes.com/themes/hotel/wp/demo/hotel/wp-content/uploads/sites/2/2017/06/parallax-8.jpg);
 }
