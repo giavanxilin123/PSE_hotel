@@ -24,9 +24,36 @@
     </div>
     <div class="test">
       <div class="test2">
-        <div class="test3">Doing the right thing, at the right time.</div>
+        <div class="box-sizing">
+          <div class="test3">Doing the right thing, at the right time.</div>
+          <div class="count-number">
+            <number ref="numberExample" :to="15" />
+            <number ref="numberExample" :to="100" />
+            <number ref="numberExample" :to="47" />
+            <number ref="numberExample" :to="10" />
+          </div>
+          
+            <div class="hoge">
+              <pre>    SUITES         ROOMS     EMPLOYEES   SERVICES</pre>
+              </div>
+          
+        </div>
       </div>
     </div>
+    <div class="margin">
+      <el-table :data="tableData" style="width: 100%">
+        <el-table-column prop="suites" label="SUITES"> </el-table-column>
+        <el-table-column prop="rooms" label="ROOMS"> </el-table-column>
+        <el-table-column
+          prop="employees"
+          label="EMPLOYEES
+"
+        >
+        </el-table-column>
+        <el-table-column prop="services" label="SERVICES"> </el-table-column>
+      </el-table>
+    </div>
+
     <div class="box-sizing">
       <div class="banner">
         <div class="img-container">
@@ -64,7 +91,22 @@
   </div>
 </template>
 
-
+<script>
+export default {
+  data() {
+    return {
+      tableData: [
+        {
+          suites: "15",
+          rooms: "100",
+          employees: "47",
+          services: "10",
+        },
+      ],
+    };
+  },
+};
+</script>
 <style scoped>
 .box-sizing {
   box-sizing: border-box;
@@ -119,7 +161,7 @@
   line-height: 500px;
 }
 .about_us_sentence {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   font-size: 40px;
 }
 .banner {
@@ -130,15 +172,48 @@
   justify-content: space-around;
 }
 
+.count-number {
+  padding:  0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  font-size: 100px;
+  font-family: "Times New Roman", Times, serif;
+  color: white;
+}
+
 .test2 {
   background: url(http://www.nicdarkthemes.com/themes/hotel/wp/demo/hotel/wp-content/uploads/sites/2/2017/06/parallax-8.jpg);
 }
 .test3 {
-  background-color: rgba(67, 74, 84, 0.3);
+  /* background-color: rgba(67, 74, 84, 0.3); */
   /* height: 305px; */
   font-size: 50px;
   color: white;
-  line-height: 500px;
+  line-height: 200px;
+}
+.test4 {
+  padding: 2.5% 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.test5 {
+  /* background-color: rgba(67, 74, 84, 0.3); */
+  /* height: 305px; */
+  font-size: 50px;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  line-height: 10px;
+}
+.test6 {
+  /* background-color: rgba(67, 74, 84, 0.3); */
+  /* height: 305px; */
+  font-size: 23px;
+  color: white;
+  line-height: 0px;
 }
 
 .img-container {
@@ -147,6 +222,13 @@
   align-items: center;
   width: 400px;
   text-align: left;
-  
+}
+.margin {
+  margin: 20px 300px;
+}
+.hoge{
+  font-size: 40px;
+  font-family: "Times New Roman", Times, serif;
+  color: white;
 }
 </style>

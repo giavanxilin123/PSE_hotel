@@ -4,7 +4,10 @@ import Home from '../views/Home.vue'
 import Authenticate from '../views/Authenticate.vue'
 import About_us from '../views/About_us.vue'
 import News from '../views/News.vue'
+
+
 import Search from '../views/Search.vue'
+
 
 Vue.use(VueRouter)
 
@@ -33,6 +36,7 @@ const routes = [
     path: '/search',
     name: 'Search',
     component: Search
+
   }
 ]
 
