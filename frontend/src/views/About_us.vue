@@ -24,7 +24,21 @@
     </div>
     <div class="test">
       <div class="test2">
-        <div class="test3">Doing the right thing, at the right time.</div>
+        <div class="box-sizing">
+          <div class="test3">Doing the right thing, at the right time.</div>
+          <div class="test4">
+            <div class="test5">15</div>
+            <div class="test5">100</div>
+            <div class="test5">47</div>
+            <div class="test5">10</div>
+          </div>
+          <div class="test4">
+            <div class="test6">SUITES</div>
+            <div class="test6">ROOMS</div>
+            <div class="test6">EMPLOYEES</div>
+            <div class="test6">SERVICES</div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="box-sizing">
@@ -119,7 +133,7 @@
   line-height: 500px;
 }
 .about_us_sentence {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   font-size: 40px;
 }
 .banner {
@@ -135,11 +149,33 @@
   background: url(http://www.nicdarkthemes.com/themes/hotel/wp/demo/hotel/wp-content/uploads/sites/2/2017/06/parallax-8.jpg);
 }
 .test3 {
-  background-color: rgba(67, 74, 84, 0.3);
+  /* background-color: rgba(67, 74, 84, 0.3); */
   /* height: 305px; */
   font-size: 50px;
   color: white;
-  line-height: 500px;
+  line-height: 200px;
+}
+.test4 {
+  padding: 2.5% 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.test5 {
+  /* background-color: rgba(67, 74, 84, 0.3); */
+  /* height: 305px; */
+  font-size: 50px;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  line-height: 10px;
+}
+.test6 {
+  /* background-color: rgba(67, 74, 84, 0.3); */
+  /* height: 305px; */
+  font-size: 23px;
+  color: white;
+  line-height: 0px;
 }
 
 .img-container {
@@ -148,6 +184,5 @@
   align-items: center;
   width: 400px;
   text-align: left;
-  
 }
 </style>
