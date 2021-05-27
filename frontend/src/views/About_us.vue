@@ -26,21 +26,23 @@
       <div class="test2">
         <div class="box-sizing">
           <div class="test3">Doing the right thing, at the right time.</div>
-          <div class="test4">
-            <div class="test5">15</div>
-            <div class="test5">100</div>
-            <div class="test5">47</div>
-            <div class="test5">10</div>
-          </div>
-          <div class="test4">
-            <div class="test6">SUITES</div>
-            <div class="test6">ROOMS</div>
-            <div class="test6">EMPLOYEES</div>
-            <div class="test6">SERVICES</div>
-          </div>
         </div>
       </div>
     </div>
+    <div class="margin">
+      <el-table :data="tableData" style="width: 100%">
+        <el-table-column prop="suites" label="SUITES"> </el-table-column>
+        <el-table-column prop="rooms" label="ROOMS"> </el-table-column>
+        <el-table-column
+          prop="employees"
+          label="EMPLOYEES
+"
+        >
+        </el-table-column>
+        <el-table-column prop="services" label="SERVICES"> </el-table-column>
+      </el-table>
+    </div>
+
     <div class="box-sizing">
       <div class="banner">
         <div class="img-container">
@@ -78,7 +80,22 @@
   </div>
 </template>
 
-
+<script>
+export default {
+  data() {
+    return {
+      tableData: [
+        {
+          suites: "15",
+          rooms: "100",
+          employees: "47",
+          services: "10",
+        },
+      ],
+    };
+  },
+};
+</script>
 <style scoped>
 .box-sizing {
   box-sizing: border-box;
@@ -184,5 +201,8 @@
   align-items: center;
   width: 400px;
   text-align: left;
+}
+.margin {
+  margin: 20px 300px;
 }
 </style>
