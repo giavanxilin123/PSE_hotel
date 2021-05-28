@@ -4,31 +4,7 @@
       <div class="logo">
         <img src="./assets/hotel-logo.png" alt="" />
       </div>
-      <div class="router">
-
-        <router-link to="/">Home</router-link>
-        <router-link to="/room">Rooms</router-link>
-        <router-link to="/about-us">About us</router-link>
-        <router-link to="/page">Page</router-link>
-        <router-link to="/news">News</router-link>
-        <router-link to="/contact">Contact</router-link>
-        <router-link
-          style="
-            color: #c19b76;
-            border-radius: 30%;
-            border: 1px solid #c19b76;
-            padding: 5px 30px;
-            margin-left: 20px;
-          "
-          v-if="!user.nickname"
-          to="/authenticate"
-          >Login</router-link
-        >
-        <div style="color: white; padding: 5px 30px; margin-left: 20px" v-else>
-          {{ user.nickname }}
-        </div>
-      </div>
-
+      <div class= "router">
          <router-link to="/">Home</router-link> 
          <router-link to="/room">Rooms</router-link>
          <router-link to="/about-us">About us</router-link>
@@ -47,46 +23,31 @@
             </el-dropdown-menu>
           </el-dropdown>
          </div>
-         
       </div> 
-
     </div>
-    <router-view />
-    <div class="footer">
-      <!-- footer  -->
-      <div class="footer-text">
+     <router-view />
+    
+    <Footer>
+      <div class="footer-content">
         <h2>Phone Support</h2>
-        <h3>+ 01 345 647 745</h3>
+        <div style=" font-size: 12px; letter-spacing: 1px; color:#a3a3a4">24 HOURS A DAY</div>
+        <div class="footer-contact">0935.562.526</div>
       </div>
-      <div class="footer-text">
+      <div class="footer-content">
         <h2>Connect With Us</h2>
-        <div class="flex">
-          <img
-            src="http://www.nicdarkthemes.com/themes/hotel/wp/demo/hotel/wp-content/uploads/sites/2/2017/07/icon-4.png"
-            width="20"
-          /><img
-            src="http://www.nicdarkthemes.com/themes/hotel/wp/demo/hotel/wp-content/uploads/sites/2/2017/07/icon-5.png"
-            width="20"
-          /><img
-            src="http://www.nicdarkthemes.com/themes/hotel/wp/demo/hotel/wp-content/uploads/sites/2/2017/07/icon-6.png"
-            width="20"
-          /><img
-            src="http://www.nicdarkthemes.com/themes/hotel/wp/demo/hotel/wp-content/uploads/sites/2/2017/07/icon-7.png"
-            width="20"
-          />
-          <img
-            src="http://www.nicdarkthemes.com/themes/hotel/wp/demo/hotel/wp-content/uploads/sites/2/2017/07/icon-8.png"
-            width="20"
-          />
-        </div>
+        <div style=" font-size: 12px; letter-spacing: 1px; color:#a3a3a4">SOCIAL MEDIA CHANNELS</div>
+        <div  class="footer-contact">0935.562.526</div>
       </div>
-      <div class="footer-text">
+      <div class="footer-content">
         <h2>Newsletter</h2>
-        <el-input placeholder="Email" v-model="input">
-          </el-input
-        ><el-button type="primary">SUBSCRIBE</el-button>
+        <div style=" font-size: 12px; letter-spacing: 1px; color:#a3a3a4">SIGN UP FOR SPECIAL OFFERS</div>
+        <form  class="footer-contact" action="">
+           <input type="mail"  placeholder="Email">
+           <button>SUBSCRIBE</button>
+        </form>
+      
       </div>
-    </div>
+    </Footer>
   </div>
 </template>
 
@@ -100,15 +61,12 @@ export default {
     return {
       input: "",
     };
-
- ted: {
+  },
+  computed: {
     user() {
       return this.$store.state.user;
 
     },
-  },
-};
-    }
   },
   methods: {
     signOut() {
@@ -205,6 +163,7 @@ body {
   }
   .router{
     display: flex;
+   
   }
   .avatar {
     border: 1px solid #c19b76;
@@ -216,5 +175,45 @@ body {
     height: 24px;
     line-height: 24px;
   }
-
+  Footer{
+    background-color: #1c1c1d;
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    padding: 40px ;
+    text-align: left;
+    
+  }
+  Footer h2{
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+  .footer-contact{
+    font-size: 20px;
+    margin-top: 20px;
+    letter-spacing: 1px;
+  }
+  Footer input{
+    background-color: #151516;
+    border: none;
+    border-radius: none;
+    padding: 15px 30px;
+    color: white;
+    outline: none;
+  }
+  
+  button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: none;
+    background-color: #c19b76;
+    color: white;
+    letter-spacing: 1px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+  }
 </style>
+
+
+
