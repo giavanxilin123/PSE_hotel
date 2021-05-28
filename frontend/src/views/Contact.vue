@@ -4,7 +4,7 @@
       <div class="shade-background">CONTACT</div>
     </div>
     <div class="authenticate-user">
-      <div class="border-form">
+      <div class="form">
         <h2
           style="
             font-weight: 300;
@@ -23,9 +23,9 @@
           euismod nulla dignissim.
         </p>
         <h4>Name:</h4>
-        <el-input placeholder="Please input" v-model="input"></el-input>
+        <el-input placeholder="Please input" v-model="input1"></el-input>
         <h4>Email:</h4>
-        <el-input placeholder="Please input" v-model="input"></el-input>
+        <el-input placeholder="Please input" v-model="input2"></el-input>
         <h4>Message:</h4>
         <el-input
           type="textarea"
@@ -38,7 +38,7 @@
         <el-button type="warning">SEND NOW</el-button>
       </div>
 
-      <div class="border-form">
+      <div class="form">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d480.3656704667982!2d106.70108334743196!3d10.775905166642627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f479e4f95db%3A0xcae127d5b519b548!2z44Os44OD44Kv44K544Ob44OG44Or!5e0!3m2!1sja!2s!4v1622215985927!5m2!1sja!2s"
           width="600"
@@ -73,6 +73,8 @@
 export default {
   data() {
     return {
+      input1: "",
+      input2: "",
       textarea: "",
       tableData1: [
         {
@@ -128,7 +130,7 @@ export default {
   padding: 60px;
   margin: 0 60px;
 }
-.border-form {
+.form {
   width: 100%;
   /* border: 1px solid #f1f1f1; */
   margin: 15px;
