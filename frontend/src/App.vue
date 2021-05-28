@@ -59,8 +59,8 @@
       </div>
       <div class="footer-text">
         <h2>Newsletter</h2>
-        <el-input placeholder="Please input" v-model="input"> </el-input
-        ><el-button type="primary">Primary Button</el-button>
+        <el-input placeholder="Email" v-model="input" > <el-button type="primary">SUBSCRIBE</el-button></el-input
+        >
       </div>
     </div>
   </div>
@@ -127,11 +127,12 @@ body {
   display: flex;
 }
 .footer {
-  padding: 25px 100px;
+  padding: 25px 300px;
   background-color: #1c1c1d;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
+  
 }
 .footer-text {
   color: #878788;
@@ -145,5 +146,15 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
+}
+.footer-text-2 {
+  color: #878788;
+  text-decoration: none;
+  padding: 0 30px;
+  font-weight: 500;
+  /* display: flex; */
+  align-items: center;
+  clear: left;
 }
 </style>
