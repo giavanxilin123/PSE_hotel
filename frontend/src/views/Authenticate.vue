@@ -104,7 +104,7 @@ export default {
         try{
           await this.$store.dispatch("logIn", this.formLogin);
           this.alertSuccess();
-          this.$router.push("/home");
+          this.$router.push("/");
         }catch(err){
           this.alertErr(err)
         }

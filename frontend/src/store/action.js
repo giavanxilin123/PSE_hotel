@@ -38,6 +38,12 @@ export const actions = {
                 reject(err.response.data)
             })
         })
+    },
+
+    signOut(ctx){
+        localStorage.removeItem('accessToken');
+        localStorage.removeItem('user');
+        ctx.commit('SIGN_OUT');
     }
 }
 
