@@ -59,8 +59,9 @@
       </div>
       <div class="footer-text">
         <h2>Newsletter</h2>
-        <el-input placeholder="Email" v-model="input" > <el-button type="primary">SUBSCRIBE</el-button></el-input
-        >
+        <el-input placeholder="Email" v-model="input">
+          </el-input
+        ><el-button type="primary">SUBSCRIBE</el-button>
       </div>
     </div>
   </div>
@@ -132,7 +133,6 @@ body {
   display: flex;
   justify-content: space-between;
   /* align-items: center; */
-  
 }
 .footer-text {
   color: #878788;
@@ -146,7 +146,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
 }
 .footer-text-2 {
   color: #878788;
