@@ -2,7 +2,7 @@
     <div>
         <div class="search-background">
             <div class="shade-background">
-                SEARCH
+                SEARCH {{room}}
             </div>
         </div>
     </div>
@@ -11,7 +11,16 @@
 
 <script>
 export default {
-    
+    data(){
+        return {
+
+        }
+    },
+    computed: {
+        room(){
+            return this.$store.state.searchRoom;
+        }
+    }
 }
 </script>
 

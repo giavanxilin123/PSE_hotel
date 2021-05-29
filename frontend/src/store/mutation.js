@@ -5,5 +5,8 @@ export const mutations = {
     SIGN_OUT(state) {
       state.user = {};
     },
+    SEARCH_ROOM(state, payload) {
+      state.searchRoom = payload;
+    }
   };
   

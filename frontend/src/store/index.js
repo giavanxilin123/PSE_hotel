@@ -10,6 +10,7 @@ export default new Vuex.Store({
   state: {
     BASE_URL,
     user: user || {}, 
+    searchRoom: {}
   },
   mutations,
   actions,

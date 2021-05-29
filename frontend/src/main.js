@@ -8,7 +8,7 @@ import locale from 'element-ui/lib/locale/lang/en'
 import store from './store'
 
 
-Vue.use(ElementUI);
+Vue.use(ElementUI, {locale});
 Vue.use(VueNumber);
 
 Vue.use(ElementUI,{ locale });

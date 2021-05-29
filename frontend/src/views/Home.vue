@@ -48,7 +48,12 @@ export default {
   },
   methods: {
     submitDate(){
-      console.log(this.checkIn);
+      this.$store.dispatch("searchRoom", {
+        num: this.num,
+        checkIn: this.checkIn,
+        checkOut: this.checkOut
+      })
+      
       this.$router.push("/search")
     }
   }
