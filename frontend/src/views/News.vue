@@ -113,9 +113,7 @@
 ul li a:hover{
     color: #fff;
     text-shadow: 0 0 3px #c0392b;
-    text-decoration: none;
-    
-   
+    text-decoration: none;   
 }
 .sign-up{
         padding: 0px 25px;
@@ -128,8 +126,7 @@ ul li a:hover{
  .banner{
      width: 100%;
      height: 300px;
-     transform: scale(1);
-     background-position-x: top;
+     background-position: center;
      background-image: url(http://www.nicdarkthemes.com/themes/hotel/wp/demo/wp-content/uploads/2017/06/parallax-8.jpg);
  }
  .banner-text{
@@ -163,7 +160,6 @@ ul li a:hover{
      grid-row: 1/5;
      padding: 5px;
      
-  
  }
  /* ======= */
  .title2{

@@ -44,6 +44,10 @@ export const actions = {
         localStorage.removeItem('accessToken');
         localStorage.removeItem('user');
         ctx.commit('SIGN_OUT');
+    },
+
+    searchRoom(ctx, payload){
+        ctx.commit('SEARCH_ROOM', payload);
     }
 }
 
