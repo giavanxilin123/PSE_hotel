@@ -47,7 +47,18 @@ export const actions = {
     },
 
     searchRoom(ctx, payload){
-        ctx.commit('SEARCH_ROOM', payload);
+        return new Promise((resolve, reject) => {
+            client
+            .get(`${BASE_URL}/api/search`, payload)
+            .then((res)=>{
+                ctx.commit('SEARCH_ROOM',{roomType: res.data, dateForm: payload});
+                localStorage.setItem('searchRoom', JSON.stringify({roomType: res.data, dateForm: payload}))
+                resolve(res)
+            })
+            .catch(err => {
+                reject(err.response.data)
+            })
+        })
     }
 }
 

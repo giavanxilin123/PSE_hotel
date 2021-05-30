@@ -35,13 +35,13 @@
         >
         </el-input>
         <br /><br />
-        <el-button type="warning">SEND NOW</el-button>
+        <button >SEND NOW</button>
       </div>
 
       <div class="form">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d480.3656704667982!2d106.70108334743196!3d10.775905166642627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f479e4f95db%3A0xcae127d5b519b548!2z44Os44OD44Kv44K544Ob44OG44Or!5e0!3m2!1sja!2s!4v1622215985927!5m2!1sja!2s"
-          width="600"
+          width="600px"
           height="300"
           style="border: 0"
           allowfullscreen=""
@@ -151,5 +151,18 @@ export default {
 }
 .table {
   display: flex;
+}
+iframe{
+  width: 100%;
+}
+button{
+  background-color: #c19b76;
+  border-radius: none;
+  border: none;
+  padding: 15px 40px;
+  color: white;
+  letter-spacing: 1px;
+  font-size: 12px;
+  font-weight: 600;
 }
 </style>

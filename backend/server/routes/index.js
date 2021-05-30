@@ -14,11 +14,8 @@ authenticateToken = (req, res, next) => {
   
     jwt.verify(token, process.env.ACCESS_TOKEN_SECRET , (err, user) => {
       console.log(err)
-  
       if (err) return res.sendStatus(403)
-  
       req.user = user
-  
       next()
     })
   }
@@ -37,6 +34,19 @@ router.get('/users', authenticateToken ,(req, res, next) => {
     }
 })
 
+router.get('/search',  (req, res, next) => {
+    try {
+        db.query(`SELECT * from products`, (err, result) => {
+                if(err){
+                   res.sendStatus(500)
+                }else{
+                    res.json(result)
+                }
+            });
+    }catch{
+        res.status(500).send()
+    }
+})
 
 router.post('/register', async (req, res, next) => {
     try{

@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Authenticate from '../views/Authenticate.vue'
 import About_us from '../views/About_us.vue'
 import News from '../views/News.vue'
+import Contact from '../views/Contact.vue'
 
 
 import Search from '../views/Search.vue'
@@ -36,7 +37,11 @@ const routes = [
     path: '/search',
     name: 'Search',
     component: Search
-
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: Contact
   }
 ]
 

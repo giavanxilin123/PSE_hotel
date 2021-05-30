@@ -13,7 +13,7 @@
                 <el-date-picker
                   v-model="checkIn"
                   type="date"
-                  format="yyyy/MM/dd"
+                  format="dd  MMM"
                   value-format="yyyy-MM-dd"
                   placeholder="CHECK - IN"
                   >
@@ -21,7 +21,7 @@
                 <el-date-picker
                   v-model="checkOut"
                   type="date"
-                  format="yyyy/MM/dd"
+                  format="dd MMM"
                   value-format="yyyy-MM-dd"
                   placeholder="CHECK - OUT">
                 </el-date-picker>
@@ -62,7 +62,7 @@
     <div class="box-sizing-1">
       <div class ="restaurant-container">
         <div class="res-text" >
-          <div class="res-text-small"> FINE FOOD </div>
+          <div class="res-text-small">FINE FOOD </div>
           <div class="res-text-big">Restaurant</div>
           
           <div class="res-text-small">Phasellus enim libero, blandit vel sapien vitae, condimentum ultricies magna et. Quisque euismod orci ut et lobortis. Phasellus enim libero, blandit.</div>
@@ -101,14 +101,17 @@ export default {
     }
   },
   methods: {
-    submitDate(){
-      this.$store.dispatch("searchRoom", {
+    async submitDate(){
+      try{
+        await this.$store.dispatch("searchRoom", {
         num: this.num,
         checkIn: this.checkIn,
         checkOut: this.checkOut
-      })
-      
+      });
       this.$router.push("/search")
+      }catch(err){
+        console(this.err)
+      }     
     }
   }
 }
@@ -183,7 +186,7 @@ export default {
   .el-input-number{
     width: 192px;
   }
-  
+
 
 .link2{
      display: inline-block;
@@ -349,6 +352,6 @@ export default {
     padding-left: 60px;
   }
   .home-booking .block .el-input__inner{
-    font-size: 14px;
+    font-size: 15px;
   }
 </style>
