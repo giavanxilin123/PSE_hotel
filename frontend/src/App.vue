@@ -6,7 +6,7 @@
       </div>
       <div class= "router">
          <router-link to="/">Home</router-link> 
-         <router-link to="/room">Rooms</router-link>
+         <router-link to="/search">Rooms</router-link>
          <router-link to="/about-us">About us</router-link>
          <router-link to="/page">Page</router-link> 
          <router-link to="/news">News</router-link>
