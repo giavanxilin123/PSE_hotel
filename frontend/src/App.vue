@@ -8,7 +8,7 @@
          <router-link to="/">Home</router-link> 
          <router-link to="/search">Rooms</router-link>
          <router-link to="/about-us">About us</router-link>
-         <router-link to="/page">Page</router-link> 
+         <router-link to="/review">Review</router-link> 
          <router-link to="/news">News</router-link>
          <router-link style="border-right: 1px solid #c19b76" to="/contact">Contact</router-link>
          <router-link style="color: #c19b76; border-radius: 30%; border: 1px solid #c19b76; padding: 5px 30px; margin-left: 20px" v-if="!user.nickname" to="/authenticate">Login</router-link>
