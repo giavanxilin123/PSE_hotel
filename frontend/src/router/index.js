@@ -6,8 +6,7 @@ import About_us from '../views/About_us.vue'
 import Review from '../views/Review.vue'
 import News from '../views/News.vue'
 import Contact from '../views/Contact.vue'
-
-
+import Booking from '../views/Booking.vue'
 import Search from '../views/Search.vue'
 
 
@@ -48,6 +47,11 @@ const routes = [
     path: '/contact',
     name: 'Contact',
     component: Contact
+  },
+  {
+    path: '/booking',
+    name: 'Booking',
+    component: Booking
   }
 ]
 

@@ -34,9 +34,25 @@ router.get('/users', authenticateToken ,(req, res, next) => {
     }
 })
 
+
+
 router.get('/search',  (req, res, next) => {
     try {
         db.query(`SELECT * from products`, (err, result) => {
+                if(err){
+                   res.sendStatus(500)
+                }else{
+                    res.json(result)
+                }
+            });
+    }catch{
+        res.status(500).send()
+    }
+})
+
+router.put('/booking/:id',authenticateToken ,(req, res, next) => {
+    try {
+        db.query(`UPDATE products SET stock = stock - 1  WHERE id = ${req.params.id}`, (err, result) => {
                 if(err){
                    res.sendStatus(500)
                 }else{
@@ -111,6 +127,19 @@ router.post('/login', (req, res, next) => {
 })
 
 
+const TelegramBot = require('node-telegram-bot-api');
+const token = '1890824080:AAEEeDRORlzEzyQaSYIUnGXjHVqh2JhlfU4';
+const bot = new TelegramBot(token, {polling: true});
 
+bot.on('message', (msg) => {
+  const chatId = msg.chat.id;
+  bot.sendMessage(chatId, 'huhuhuhu');
+});
+
+// bot.onText(/\/echo (.+)/, (msg, match) => {
+//   const chatId = msg.chat.id;
+//   const resp = match[1]; // the captured "whatever"
+//   bot.sendMessage(chatId, resp);
+// });
 
 module.exports = router;

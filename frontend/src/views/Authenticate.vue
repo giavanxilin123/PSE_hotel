@@ -108,7 +108,6 @@ export default {
         }catch(err){
           this.alertErr(err)
         }
-        console.log(this.user)
       },
       alertErr(err) {
       this.$message({

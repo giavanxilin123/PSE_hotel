@@ -25,7 +25,7 @@
                  
               </div>
                 <div class="guess-night">
-                    <el-input-number v-model="date.num" controls-position="right" @change="handleChange" :min="1" :max="10"></el-input-number>
+                    <el-input-number v-model="num" controls-position="right" ></el-input-number>
                     <div class="night">
                         <div style="font-size: 12px; letter-spacing: 1px; text-align: center; padding: 10px; color: white">NIGHTS</div>
                         <div class=" account">{{accountDate}}</div>
@@ -44,7 +44,7 @@
                     <div class="room-description">
                         {{r.description}}
                     </div>
-                    <button class= "room-price">BOOK NOW FOR {{r.price}} $</button>
+                    <button @click="booking(r.id)" class= "room-price">BOOK NOW FOR {{r.price}} $</button>
                     <div class="full-info">
                         <div class="info-img">
                             <img src="../assets/icon-1.png" alt="">
@@ -75,7 +75,8 @@ export default {
                 require('../assets/luxuryRoom.jpeg'),
                 require('../assets/doubleRoom.jpeg'),
                 require('../assets/familyRoom.jpeg')
-            ],    
+            ],
+            num : 1 
         }
     },
     computed: {
@@ -93,8 +94,41 @@ export default {
             return diffDays;
         }
     },
-    mounted(){
-        console.log(this.date);
+    // mounted(){
+    //     console.log(this.date);
+    // },
+    methods:{
+        async booking(id){
+            // room['totalPrice'] = room.price * this.accountDate;
+            if (!this.checkPermission()) {
+                return this.alertErr();
+            }
+            else {
+                try{
+                await this.$store.dispatch("booking", {id: id, ls: this.$store.state.searchRoom});
+                this.$router.push("/booking")
+                }catch(err){
+                    console(this.err)
+                } 
+            }
+                
+         },
+         checkPermission() {
+            const check =
+                JSON.parse(localStorage.getItem('accessToken')) &&
+                JSON.parse(localStorage.getItem('user'));
+            if (check) {
+                return true;
+            }
+            return false;
+        },
+        alertErr() {
+            this.$message({
+                showClose: true,
+                message: 'You need to login to book this room!',
+                type: 'error',
+            });
+            },
     }
 }
 </script>
@@ -156,6 +190,14 @@ export default {
     background-color: white;
     text-align: left;
   }
+  .room-price{
+      cursor: pointer;
+  }
+  .room-price:hover{
+      color: white;
+      background-color: #151516;
+      transition: linear 0.2s;
+  }
   .room-model {
       display: grid;
       grid-template-columns: 50% 50%;
@@ -193,7 +235,6 @@ export default {
       margin-top: 20px;
       padding-top: 10px;
   }
-  
   
 </style>
 

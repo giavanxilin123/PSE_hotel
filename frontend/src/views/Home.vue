@@ -13,7 +13,7 @@
                 <el-date-picker
                   v-model="checkIn"
                   type="date"
-                  format="dd  MMM"
+                  format="yyyy-MM-dd"
                   value-format="yyyy-MM-dd"
                   placeholder="CHECK - IN"
                   >
@@ -21,7 +21,7 @@
                 <el-date-picker
                   v-model="checkOut"
                   type="date"
-                  format="dd MMM"
+                  format="yyyy-MM-dd"
                   value-format="yyyy-MM-dd"
                   placeholder="CHECK - OUT">
                 </el-date-picker>
@@ -104,7 +104,6 @@ export default {
     async submitDate(){
       try{
         await this.$store.dispatch("searchRoom", {
-        num: this.num,
         checkIn: this.checkIn,
         checkOut: this.checkOut
       });

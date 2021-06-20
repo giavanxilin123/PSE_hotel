@@ -8,6 +8,7 @@ const client = axios.create({
     withCredentials: false
 });
 
+
 function getDefaultHeader() {
     return {
         Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('accessToken')),
@@ -53,6 +54,44 @@ export const actions = {
             .then((res)=>{
                 ctx.commit('SEARCH_ROOM',{roomType: res.data, dateForm: payload});
                 localStorage.setItem('searchRoom', JSON.stringify({roomType: res.data, dateForm: payload}))
+                resolve(res)
+            })
+            .catch(err => {
+                reject(err.response.data)
+            })
+        })
+    },
+
+    booking(ctx, payload){
+        return new Promise((resolve, reject) => {
+            client
+            .put(`${BASE_URL}/api/booking/${payload.id}`)
+            .then((res)=>{
+                payload.ls.roomType[payload.id - 1]['stock'] = payload.ls.roomType[payload.id - 1]['stock'] - 1;
+                ctx.commit('SEARCH_ROOM',{roomType: payload.ls.roomType, dateForm: payload.ls.dateForm});
+                localStorage.setItem('searchRoom', JSON.stringify({roomType: payload.ls.roomType, dateForm: payload.ls.dateForm}))
+                localStorage.setItem('bookingID', JSON.stringify(payload.id))
+                resolve(res)
+            })
+            .catch(err => {
+                reject(err.response.data)
+            })
+        })
+    },
+
+    checkOut(ctx, payload){
+        return new Promise((resolve, reject) => {
+            client
+            .post(`https://api.telegram.org/bot1890824080:AAEEeDRORlzEzyQaSYIUnGXjHVqh2JhlfU4/sendMessage?chat_id=-543331111&text=
+            Tên khách hàng: ${payload.nickname}
+                        Email: ${payload.email}
+                        Số điện thoaị: 0935562526
+                        Loại phòng: ${payload.roomType}
+                        Ngày CheckIn: ${payload.checkIn}
+                        Ngày CheckOut: ${payload.checkOut}
+                        Tổng giá tiền: ${payload.total}$`
+                        )
+            .then((res)=>{
                 resolve(res)
             })
             .catch(err => {
