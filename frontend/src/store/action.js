@@ -83,13 +83,13 @@ export const actions = {
         return new Promise((resolve, reject) => {
             client
             .post(`https://api.telegram.org/bot1890824080:AAEEeDRORlzEzyQaSYIUnGXjHVqh2JhlfU4/sendMessage?chat_id=-543331111&text=
-            Tên khách hàng: ${payload.nickname}
-                        Email: ${payload.email}
-                        Số điện thoaị: 0935562526
-                        Loại phòng: ${payload.roomType}
-                        Ngày CheckIn: ${payload.checkIn}
-                        Ngày CheckOut: ${payload.checkOut}
-                        Tổng giá tiền: ${payload.total}$`
+                                                        Tên khách hàng: ${payload.nickname}            
+                                                        Email: ${payload.email}
+                                                        Số điện thoaị: 0935562526
+                                                        Loại phòng: ${payload.roomType}
+                                                        Ngày CheckIn: ${payload.checkIn}
+                                                        Ngày CheckOut: ${payload.checkOut}
+                                                        Tổng giá tiền: ${payload.total}$`
                         )
             .then((res)=>{
                 resolve(res)

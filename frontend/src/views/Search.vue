@@ -25,7 +25,7 @@
                  
               </div>
                 <div class="guess-night">
-                    <el-input-number v-model="num" controls-position="right" ></el-input-number>
+                    <!-- <el-input-number v-model="num" controls-position="right" ></el-input-number> -->
                     <div class="night">
                         <div style="font-size: 12px; letter-spacing: 1px; text-align: center; padding: 10px; color: white">NIGHTS</div>
                         <div class=" account">{{accountDate}}</div>
@@ -110,8 +110,7 @@ export default {
                 }catch(err){
                     console(this.err)
                 } 
-            }
-                
+            } 
          },
          checkPermission() {
             const check =
@@ -209,6 +208,7 @@ export default {
   }
   .guess-night{
       display: flex;
+      justify-content: center;
   }
   .el-input-number {
       margin: 15px;
